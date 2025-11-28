@@ -54,10 +54,41 @@ The simulator supports multiple IoT vendors simultaneously. Each vendor has:
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ and npm 9+
-- Docker and Docker Compose (for containerized deployment)
+- **For Web Application**: Node.js 18+ and npm 9+, Docker and Docker Compose (optional)
+- **For CLI Tool**: Python 3.7+ (lightweight, no Node.js required)
 
-### Development Mode
+### CLI Tool (Python - Lightweight)
+
+Perfect for servers without Node.js or when you just need basic device management.
+
+1. **Install Python dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+2. **Run the CLI:**
+```bash
+python iot_cli.py
+```
+
+3. **Features:**
+   - ✅ Login to vendor API
+   - ✅ List device profiles
+   - ✅ Import devices from API
+   - ✅ Bulk create devices with auto-incrementing names
+   - ✅ Send test data (basic simulator)
+   - ✅ No database or complex setup needed
+   - ✅ Works on any server with Python
+
+**Example workflow:**
+```
+1. Login to Vendor API → Enter credentials
+2. List Device Profiles → Note the profile ID
+3. Bulk Create Devices → Enter count, prefix, profile ID
+4. Send Test Data → Test individual device
+```
+
+### Development Mode (Web Application)
 
 1. **Install all dependencies:**
 ```bash
