@@ -1,0 +1,121 @@
+import { useState } from 'react'
+import { Activity, Cpu, Database, Settings } from 'lucide-react'
+
+function App() {
+  const [activeTab, setActiveTab] = useState('dashboard')
+
+  return (
+    <div className="min-h-screen bg-neutral-50">
+      {/* Header */}
+      <header className="bg-white border-b border-neutral-200 shadow-soft">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
+                <Cpu className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-neutral-900">IoT Simulator</h1>
+                <p className="text-xs text-neutral-500">Modern Device Platform</p>
+              </div>
+            </div>
+            <button className="btn-secondary">
+              <Settings className="w-4 h-4 mr-2 inline" />
+              Settings
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div className="card">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-neutral-600 mb-1">Total Devices</p>
+                <p className="text-3xl font-bold text-neutral-900">0</p>
+              </div>
+              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
+                <Database className="w-6 h-6 text-primary-600" />
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-neutral-600 mb-1">Active</p>
+                <p className="text-3xl font-bold text-success-600">0</p>
+              </div>
+              <div className="w-12 h-12 bg-success-100 rounded-xl flex items-center justify-center">
+                <Activity className="w-6 h-6 text-success-600" />
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-neutral-600 mb-1">Total Requests</p>
+                <p className="text-3xl font-bold text-neutral-900">0</p>
+              </div>
+              <div className="w-12 h-12 bg-warning-100 rounded-xl flex items-center justify-center">
+                <Activity className="w-6 h-6 text-warning-600" />
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-neutral-600 mb-1">Success Rate</p>
+                <p className="text-3xl font-bold text-success-600">0%</p>
+              </div>
+              <div className="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center">
+                <Activity className="w-6 h-6 text-neutral-600" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Welcome Card */}
+        <div className="card">
+          <div className="text-center py-12">
+            <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <Cpu className="w-8 h-8 text-primary-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-neutral-900 mb-2">
+              Welcome to IoT Simulator Platform
+            </h2>
+            <p className="text-neutral-600 mb-6 max-w-2xl mx-auto">
+              Modern, modular IoT device simulator with React, Docker, and MQTT support.
+              Create unlimited devices, manage groups, and simulate real-world IoT scenarios.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <button className="btn-primary">
+                Get Started
+              </button>
+              <button className="btn-secondary">
+                View Documentation
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Status Info */}
+        <div className="mt-8 p-4 bg-primary-50 border border-primary-200 rounded-xl">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+            <p className="text-sm text-primary-900">
+              <strong>System Status:</strong> All services running • Backend connected • Ready for simulation
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+  )
+}
+
+export default App
