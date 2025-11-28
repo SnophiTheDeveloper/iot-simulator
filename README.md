@@ -187,13 +187,13 @@ VITE_API_URL=http://localhost:3001
    - Choose a color for visual distinction
 4. Configure **HTTP API** (if needed):
    - Enable HTTP API
-   - Enter base URL (e.g., `http://test-skywaveapi.innova.com.tr:30080`)
+   - Enter base URL (e.g., `http://api.example.com:8080`)
    - Enter tenant code, username, password
    - Click **"Test Login"** to authenticate
    - Token will be saved automatically
 5. Configure **MQTT** (if needed):
    - Enable MQTT
-   - Enter broker URL (e.g., `ws://test-skywave-mqtt.innova.com.tr:61626`)
+   - Enter broker URL (e.g., `ws://mqtt.example.com:1883`)
    - (Optional) Enter client ID and credentials
    - Click **"Connect"** to establish connection
 6. Configure **Device Import** (optional):
